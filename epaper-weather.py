@@ -61,7 +61,7 @@ def ausgabe(y):
 
 	message = "W" #glyphter font: This is the humidity drop.
 	drawblack.text((6,55), message, inky_display.BLACK,font = glyphter)
-	message = ": " + str(y["main"]["humidity"]) + "%" 
+	message = " " + str(y["main"]["humidity"]) + "%" 
 	drawblack.text((22,55), message, inky_display.BLACK, font = font18)
 		
 	message = "B " # Sunrise icon
