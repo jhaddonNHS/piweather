@@ -52,12 +52,12 @@ def ausgabe(y):
 	message = str(y["weather"][0]["description"])
 	drawblack.text((8,27), message, inky_display.BLACK, font = font20) # Getting description from API (e.g. "partly cloudy")
 	if tempInt >= 10:
-		drawblack.line((85, 2, 85, 22), inky_display.BLACK, width = 1)
+		drawblack.line((88, 2, 88, 22), inky_display.BLACK, width = 1)
 	else:
 		drawblack.line((78, 2, 78, 22), inky_display.BLACK, width = 1)
 	message = "Feels like " + str(y["main"]["feels_like"]) + "ºC" # Feel like temp.
 	if tempInt >= 10:
-		drawblack.text((92,2), message, inky_display.BLACK, font = font18)
+		drawblack.text((95,2), message, inky_display.BLACK, font = font18)
 	else:
 		drawblack.text((85,2), message, inky_display.BLACK, font = font18)
     
