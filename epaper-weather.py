@@ -44,7 +44,7 @@ def ausgabe(y):
 	#draw.rectangle((0, 0, inky_display.WIDTH, inky_display.HEIGHT), fill = 255)
 	today = datetime.datetime.today()
 	drawblack = ImageDraw.Draw(image)
-	
+	tempInt = y["main"]["temp"]
 	message = "\' " #Meteocon symbol for the thermometer
 	drawblack.text((0,2), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
 	message = "   " + str(y["main"]["temp"]) + "ºC" # Getting the data from the API.
