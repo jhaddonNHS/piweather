@@ -28,8 +28,6 @@ APIKEY = settings.API_KEY # Get a free api key from the Open Weather Map: https:
 LOCATION = "Solihull" # Choose your city.
 WETTER_API_URL = "http://api.openweathermap.org/data/2.5/weather" # This is the weather API. They have other APIs like the "One Call" one that has other info like forecast or moonrise. Pick your poison.
 
-
-
 def ausgabe(y):
 	image = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
 	today = datetime.datetime.today()
@@ -94,7 +92,6 @@ data_source = WETTER_API_URL + "?" + urllib.parse.urlencode(params) +"&lang=en" 
 weather_refresh = None
 
 wait = 0
-
 
 if wait == 0:
 	response = urllib.request.urlopen(data_source) 
