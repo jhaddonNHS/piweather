@@ -87,9 +87,6 @@ def ausgabe(y):
 	drawblack.text((165, 85), 'Last update:', inky_display.BLACK, font = font14) #
 	drawblack.text((165, 100), '{:%a, %d.%m. (%H:%M)}'.format(today), inky_display.BLACK, font = font12)
 	drawblack.line((155, 85, 155, 128), inky_display.BLACK, width = 1)
-	#image.save('pil_text.png')
-	#ryimage.save('pil_text2.png')
-	#img = Image.open("pil_text.png")
 	image = image.rotate(180)
 	inky_display.set_image(image)
 	inky_display.show()
