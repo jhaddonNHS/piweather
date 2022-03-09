@@ -39,9 +39,7 @@ WETTER_API_URL = "http://api.openweathermap.org/data/2.5/weather" # This is the 
 
 
 def ausgabe(y):
-	#epd.init()
 	image = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
-	#draw.rectangle((0, 0, inky_display.WIDTH, inky_display.HEIGHT), fill = 255)
 	today = datetime.datetime.today()
 	drawblack = ImageDraw.Draw(image)
 	tempInt = y["main"]["temp"]
