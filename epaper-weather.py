@@ -1,5 +1,3 @@
-# See this in action here: https://www.reddit.com/r/raspberry_pi/comments/swcii5/raspberry_pi_4_and_29_epaper_showing_me_the/
-#
 import dynaconf
 from config import settings
 import json 
@@ -12,8 +10,6 @@ inky_display = auto(ask_user=True, verbose=True)
 from PIL import Image,ImageDraw,ImageFont # Needed for the e-ink display.
 import textwrap # This is so your text can wrap if it gets too long.
 import datetime # To get time of last update.
-# import locale
-# locale.setlocale(locale.LC_ALL, 'de_DE.utf8') # Used this to set Germany as a region.
 
 meteocons = ImageFont.truetype('meteocons.ttf', 32) # Get here: https://www.alessioatzeni.com/meteocons/ and put .ttf file in the same directory
 meteoconssmall = ImageFont.truetype('meteocons.ttf', 20) # This is the same for a smaller text size, in case you want smaller symbols.
@@ -25,7 +21,7 @@ font18 = ImageFont.truetype('arialn.ttf', 18)
 font16 = ImageFont.truetype('arialn.ttf', 16)
 font14 = ImageFont.truetype('arialn.ttf', 14)
 font12 = ImageFont.truetype('arialn.ttf', 12)
-width = 296 # width and height of my particular 2.9 inch display.
+width = 296 # width and height of the inkyPHAT
 height = 128
 
 APIKEY = settings.API_KEY # Get a free api key from the Open Weather Map: https://openweathermap.org/api
