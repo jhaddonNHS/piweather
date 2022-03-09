@@ -45,6 +45,7 @@ def ausgabe(y):
 		drawblack.line((88, 2, 88, 22), inky_display.BLACK, width = 1)
 	else:
 		drawblack.line((78, 2, 78, 22), inky_display.BLACK, width = 1)
+	#Add 'Feels Like' temp
 	message = "Feels like " + str(y["main"]["feels_like"]) + "ºC" # Feel like temp.
 	if tempInt >= 10:
 		drawblack.text((95,2), message, inky_display.BLACK, font = font18)
