@@ -32,16 +32,10 @@ APIKEY = settings.API_KEY # Get a free api key from the Open Weather Map: https:
 LOCATION = "Solihull" # Choose your city.
 WETTER_API_URL = "http://api.openweathermap.org/data/2.5/weather" # This is the weather API. They have other APIs like the "One Call" one that has other info like forecast or moonrise. Pick your poison.
 
-#epd = epd2in9bc.EPD() # Adjust according to your display.
-#epd.init()
-#image = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
-#draw = ImageDraw.Draw(image)
 
 
 def ausgabe(y):
-	#epd.init()
 	image = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
-	#draw.rectangle((0, 0, inky_display.WIDTH, inky_display.HEIGHT), fill = 255)
 	today = datetime.datetime.today()
 	drawblack = ImageDraw.Draw(image)
 	tempInt = y["main"]["temp"]
