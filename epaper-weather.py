@@ -47,13 +47,19 @@ def ausgabe(y):
 	tempInt = y["main"]["temp"]
 	message = "\' " #Meteocon symbol for the thermometer
 	drawblack.text((0,2), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
-	message = "   " + str(y["main"]["temp"]) + "ºC" # Getting the data from the API.
+	message = "   " + str(tempInt) + "ºC" # Getting the data from the API.
 	drawblack.text((3,0), message, inky_display.BLACK,font = font22)
 	message = str(y["weather"][0]["description"])
 	drawblack.text((8,27), message, inky_display.BLACK, font = font20) # Getting description from API (e.g. "partly cloudy")
-	drawblack.line((85, 2, 85, 22), inky_display.BLACK, width = 1)
+    if tempInt >= 10:
+        drawblack.line((85, 2, 85, 22), inky_display.BLACK, width = 1)
+    else:
+        drawblack.line((78, 2, 78, 22), inky_display.BLACK, width = 1)
 	message = "Feels like " + str(y["main"]["feels_like"]) + "ºC" # Feel like temp.
-	drawblack.text((88,2), message, inky_display.BLACK, font = font18)
+    if tempInt >= 10:
+        drawblack.text((92,2), message, inky_display.BLACK, font = font18)
+    else:
+        drawblack.text((85,2), message, inky_display.BLACK, font = font18)
     
 	#Wind speed
 	message = "F"  # Meteocon symbol for wind
