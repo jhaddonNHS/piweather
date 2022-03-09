@@ -90,8 +90,6 @@ def ausgabe(y):
 	image = image.rotate(180)
 	inky_display.set_image(image)
 	inky_display.show()
-	#epd.display(epd.getbuffer(image), epd.getbuffer(ryimage))
-	#epd.sleep()
 
 # Set up where we'll be fetching data from
 params = {"q": LOCATION, "appid": APIKEY, "units":"metric" } # options are standard, metric, imperial
