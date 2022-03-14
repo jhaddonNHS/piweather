@@ -46,9 +46,9 @@ def ausgabe(y):
 	#Add 'Feels Like' temp
 	message = "Feels like " + str(y["main"]["feels_like"]) + "ºC" # Feel like temp.
 	if tempInt >= 10:
-		drawblack.text((95,2), message, inky_display.BLACK, font = font22)
+		drawblack.text((95,0), message, inky_display.BLACK, font = font22)
 	else:
-		drawblack.text((85,2), message, inky_display.BLACK, font = font22)
+		drawblack.text((85,0), message, inky_display.BLACK, font = font22)
     
 	#Wind speed
 	message = "F"  # Meteocon symbol for wind
