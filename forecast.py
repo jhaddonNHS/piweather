@@ -54,7 +54,7 @@ def ausgabe(y):
 	#Wind speed
 	message = "F"  # Meteocon symbol for wind
 	drawblack.text((80,57), message, inky_display.BLACK,font = meteoconssmall)
-	wind_ms = (y["wind"]["speed"])
+	wind_ms = (y["current"]["wind_speed"])
 	wind_kmh = wind_ms * 2.237 # This calculates the metres/second into miles/
 	formatted_wind_kmh = "{:.2f}".format(wind_kmh) # This reduces the output to two numbers behind the comma
 	message = str(formatted_wind_kmh) + " mph"
