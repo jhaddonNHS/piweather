@@ -41,7 +41,7 @@ def ausgabe(y):
 	lowtemp = str(y["daily"][0]["temp"]["min"]) + "ºC"
 	message = message + "|Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
 	message = message + "|" + hightemp + "|" + lowtemp
-	drawblack.text((3,0), message, inky_display.BLACK,font = font20)
+	drawblack.text((3,0), message, inky_display.BLACK,font = font18)
     
 	#Wind speed
 	message = "F"  # Meteocon symbol for wind
