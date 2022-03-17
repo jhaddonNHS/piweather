@@ -33,7 +33,7 @@ def ausgabe(y):
 	image = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
 	today = datetime.datetime.today()
 	drawblack = ImageDraw.Draw(image)
-	tempInt = y["main"]["temp"]
+	tempInt = y["current"]["temp"]
 	message = "\' " #Meteocon symbol for the thermometer
 	drawblack.text((0,2), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
 	message = "   " + str(tempInt) + "ºC" # Getting the data from the API.
@@ -45,7 +45,7 @@ def ausgabe(y):
 	else:
 		drawblack.line((78, 2, 78, 22), inky_display.BLACK, width = 1)
 	#Add 'Feels Like' temp
-	message = "Feels like " + str(y["main"]["feels_like"]) + "ºC" # Feel like temp.
+	message = "Feels like " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
 	if tempInt >= 10:
 		drawblack.text((95,0), message, inky_display.BLACK, font = font22)
 	else:
@@ -62,19 +62,19 @@ def ausgabe(y):
 
 	message = "W" #glyphter font: This is the humidity drop.
 	drawblack.text((6,55), message, inky_display.BLACK,font = glyphter)
-	message = " " + str(y["main"]["humidity"]) + "%" 
+	message = " " + str(y["current"]["humidity"]) + "%" 
 	drawblack.text((22,55), message, inky_display.BLACK, font = font18)
 		
 	message = "B " # Sunrise icon
 	drawblack.text((0,85), message, inky_display.BLACK, font = meteocons)
-	message = "   " + time.strftime('%H:%M', time.localtime(y["sys"]["sunrise"]))
+	message = "   " + time.strftime('%H:%M', time.localtime(y["current"]["sunrise"]))
 	drawblack.text((20,85), message, inky_display.BLACK, font = font18)
 	message = "Sunrise"
 	drawblack.text((32,100), message,inky_display.BLACK, font = font14)
 
 	message = "A " # Sunset icon
 	drawblack.text((80,85), message, inky_display.RED, font = meteocons)
-	message = "   " + time.strftime('%H:%M', time.localtime(y["sys"]["sunset"]))
+	message = "   " + time.strftime('%H:%M', time.localtime(y["current"]["sunset"]))
 	drawblack.text((95,85), message, inky_display.BLACK, font = font18)
 	message = "Sunset"
 	drawblack.text((110,100), message,  inky_display.BLACK, font = font14)
