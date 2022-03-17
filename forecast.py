@@ -38,14 +38,15 @@ def ausgabe(y):
 	drawblack.text((0,2), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
 	message = "   " + str(tempInt) + "ºC" # Getting the data from the API.
 	drawblack.text((3,0), message, inky_display.BLACK,font = font22)
-	message = str(y["current"]["weather"][0]["description"])
-	drawblack.text((8,25), message, inky_display.BLACK, font = font22) # Getting description from API (e.g. "partly cloudy")
+	dt = time.strftime('%H', time.localtime(y["hourly"][3]["dt"]))
+	message = str(dt) + " " + str(y["hourly"][3]["temp"])  + "ºC"
+	drawblack.text((8,25), message, inky_display.BLACK, font = font20) # Getting description from API (e.g. "partly cloudy")
 	if tempInt >= 10:
 		drawblack.line((88, 2, 88, 22), inky_display.BLACK, width = 1)
 	else:
 		drawblack.line((78, 2, 78, 22), inky_display.BLACK, width = 1)
 	#Add 'Feels Like' temp
-	message = "Feels like " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
+	message = "" + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
 	if tempInt >= 10:
 		drawblack.text((95,0), message, inky_display.BLACK, font = font22)
 	else:
