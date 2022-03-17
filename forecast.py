@@ -40,8 +40,6 @@ def ausgabe(y):
 	drawblack.text((3,0), message, inky_display.BLACK,font = font22)
 	hightemp = str(y["daily"][0]["temp"]["max"]) + "ºC"
 	lowtemp = str(y["daily"][0]["temp"]["min"]) + "ºC"
-	
-	message = MAX
 	drawblack.text((8,25), message, inky_display.BLACK, font = font20) # Getting description from API (e.g. "partly cloudy")
 	if tempInt >= 10:
 		drawblack.line((88, 2, 88, 22), inky_display.BLACK, width = 1)
