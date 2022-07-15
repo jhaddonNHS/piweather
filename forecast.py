@@ -52,6 +52,16 @@ def ausgabe(y):
 	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
 	message = message  + hightemp + " | " + lowtemp
 	drawblack.text((3,22), message, inky_display.BLACK,font = font22)
+	
+	#Next Day
+	message = "\' " #Meteocon symbol for the thermometer
+	drawblack.text((0,42), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
+	message = "   "
+	hightemp = str(y["daily"][2]["temp"]["max"]) + "ºC"
+	lowtemp = str(y["daily"][2]["temp"]["min"]) + "ºC"
+	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
+	message = message  + hightemp + " | " + lowtemp
+	drawblack.text((3,42), message, inky_display.BLACK,font = font22)
 		
 	message = "B " # Sunrise icon
 	drawblack.text((0,85), message, inky_display.BLACK, font = meteocons)
