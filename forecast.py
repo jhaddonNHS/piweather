@@ -39,9 +39,9 @@ def ausgabe(y):
 	message = "   " + str(tempInt) + "ºC" # Getting the data from the API.
 	hightemp = str(y["daily"][0]["temp"]["max"]) + "ºC"
 	lowtemp = str(y["daily"][0]["temp"]["min"]) + "ºC"
-	message = message + "|Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
-	message = message + "|" + hightemp + "|" + lowtemp
-	drawblack.text((3,0), message, inky_display.BLACK,font = font18)
+	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
+	message = message + " | " + hightemp + " | " + lowtemp
+	drawblack.text((3,0), message, inky_display.BLACK,font = font22)
     
 	#Wind speed
 	message = "F"  # Meteocon symbol for wind
