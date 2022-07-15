@@ -43,6 +43,16 @@ def ausgabe(y):
 	message = message + " | " + hightemp + " | " + lowtemp
 	drawblack.text((3,0), message, inky_display.BLACK,font = font22)
     
+	#Tomorrow
+	message = "\' " #Meteocon symbol for the thermometer
+	drawblack.text((0,20), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
+	message = "   "
+	hightemp = str(y["daily"][1]["temp"]["max"]) + "ºC"
+	lowtemp = str(y["daily"][1]["temp"]["min"]) + "ºC"
+	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
+	message = message + " | " + hightemp + " | " + lowtemp
+	drawblack.text((3,20), message, inky_display.BLACK,font = font22)
+	
 	#Wind speed
 	message = "F"  # Meteocon symbol for wind
 	drawblack.text((80,57), message, inky_display.BLACK,font = meteoconssmall)
