@@ -16,6 +16,7 @@ meteoconssmall = ImageFont.truetype('meteocons.ttf', 20) # This is the same for 
 glyphter = ImageFont.truetype('glyphter.ttf', 20) # This is for humidity icon. Font is here: https://freebiesbug.com/psd-freebies/80-stroke-icons-psd-ai-webfont/
 #font22 = ImageFont.truetype('Font.ttc', 22) # Various font sizes to choose from.
 font22 = ImageFont.truetype('arialn.ttf', 22)
+font21 = ImageFont.truetype('arialn.ttf', 21)
 font20 = ImageFont.truetype('arialn.ttf', 20)
 font18 = ImageFont.truetype('arialn.ttf', 18)
 font16 = ImageFont.truetype('arialn.ttf', 16)
@@ -36,32 +37,32 @@ def ausgabe(y):
 	tempInt = y["current"]["temp"]
 	message = ""
 	drawblack.text((0,2), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
-	message = " C " + str(tempInt) + "ºC" # Getting the data from the API.
+	message = " C:" + str(tempInt) + "ºC" # Getting the data from the API.
 	hightemp = str(y["daily"][0]["temp"]["max"]) + "ºC"
 	lowtemp = str(y["daily"][0]["temp"]["min"]) + "ºC"
 	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
 	message = message + " H:" + hightemp + " L:" + lowtemp
-	drawblack.text((3,0), message, inky_display.BLACK,font = font20)
+	drawblack.text((3,0), message, inky_display.BLACK,font = font21)
     
 	#Tomorrow
 	message = "" #Meteocon symbol for the thermometer
 	drawblack.text((0,22), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
-	message = " H "
+	message = " H:"
 	hightemp = str(y["daily"][1]["temp"]["max"]) + "ºC"
 	lowtemp = str(y["daily"][1]["temp"]["min"]) + "ºC"
 	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
-	message = message  + hightemp + " L " + lowtemp
-	drawblack.text((3,22), message, inky_display.BLACK,font = font20)
+	message = message  + hightemp + " L:" + lowtemp
+	drawblack.text((3,22), message, inky_display.BLACK,font = font21)
 	
 	#Next Day
 	message = "" #Meteocon symbol for the thermometer
 	drawblack.text((0,42), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
-	message = " H "
+	message = " H:"
 	hightemp = str(y["daily"][2]["temp"]["max"]) + "ºC"
 	lowtemp = str(y["daily"][2]["temp"]["min"]) + "ºC"
 	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
-	message = message  + hightemp + " L " + lowtemp
-	drawblack.text((3,42), message, inky_display.BLACK,font = font20)
+	message = message  + hightemp + " L:" + lowtemp
+	drawblack.text((3,42), message, inky_display.BLACK,font = font21)
 		
 	message = "B " # Sunrise icon
 	drawblack.text((0,85), message, inky_display.BLACK, font = meteocons)
