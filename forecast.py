@@ -50,8 +50,9 @@ def ausgabe(y):
 	message = " H:"
 	hightemp = str(y["daily"][1]["temp"]["max"]) + "ºC"
 	lowtemp = str(y["daily"][1]["temp"]["min"]) + "ºC"
+	rain = str(y["daily"][1]["pop"] * 100) 
 	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
-	message = message  + hightemp + " L:" + lowtemp
+	message = message  + hightemp + " L:" + lowtemp + " R:" + rain + "%"
 	drawblack.text((3,22), message, inky_display.BLACK,font = font21)
 	
 	#Next Day
