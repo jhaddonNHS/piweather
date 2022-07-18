@@ -36,32 +36,32 @@ def ausgabe(y):
 	tempInt = y["current"]["temp"]
 	message = ""
 	drawblack.text((0,2), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
-	message = "   C " + str(tempInt) + "ºC" # Getting the data from the API.
+	message = " C " + str(tempInt) + "ºC" # Getting the data from the API.
 	hightemp = str(y["daily"][0]["temp"]["max"]) + "ºC"
 	lowtemp = str(y["daily"][0]["temp"]["min"]) + "ºC"
 	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
 	message = message + " H " + hightemp + " L " + lowtemp
-	drawblack.text((3,0), message, inky_display.BLACK,font = font22)
+	drawblack.text((3,0), message, inky_display.BLACK,font = font20)
     
 	#Tomorrow
 	message = "" #Meteocon symbol for the thermometer
 	drawblack.text((0,22), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
-	message = "   H "
+	message = " H "
 	hightemp = str(y["daily"][1]["temp"]["max"]) + "ºC"
 	lowtemp = str(y["daily"][1]["temp"]["min"]) + "ºC"
 	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
 	message = message  + hightemp + " L " + lowtemp
-	drawblack.text((3,22), message, inky_display.BLACK,font = font22)
+	drawblack.text((3,22), message, inky_display.BLACK,font = font20)
 	
 	#Next Day
 	message = "" #Meteocon symbol for the thermometer
 	drawblack.text((0,42), message, inky_display.RED,font = meteoconssmall) # It's red. Adjust this for black/white displays.
-	message = "   H "
+	message = " H "
 	hightemp = str(y["daily"][2]["temp"]["max"]) + "ºC"
 	lowtemp = str(y["daily"][2]["temp"]["min"]) + "ºC"
 	#message = message + "| Feels " + str(y["current"]["feels_like"]) + "ºC" # Feel like temp.
 	message = message  + hightemp + " L " + lowtemp
-	drawblack.text((3,42), message, inky_display.BLACK,font = font22)
+	drawblack.text((3,42), message, inky_display.BLACK,font = font20)
 		
 	message = "B " # Sunrise icon
 	drawblack.text((0,85), message, inky_display.BLACK, font = meteocons)
